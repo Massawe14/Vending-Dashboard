@@ -94,7 +94,7 @@
                     <a href="{{route('password.request')}}" class="forgot-pass">Forgot password</a>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
+                    <button type="submit" class="btn btn-primary btn-block enter-btn" name="register">Register</button>
                   </div>
                   <p class="sign-up text-center">Already have an Account?<a href="{{route('login')}}"> Login</a></p>
                 </form>
