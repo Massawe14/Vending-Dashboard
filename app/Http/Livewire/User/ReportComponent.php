@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\User;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class ReportComponent extends Component
 {
     public function render()
     {
-        return view('livewire.report-component')->layout('layouts.base');
+        return view('livewire.user.report-component')->layout('layouts.base');
     }
 }

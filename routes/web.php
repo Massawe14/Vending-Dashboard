@@ -2,11 +2,11 @@
 
 use App\Http\Livewire\IndexComponent;
 use App\Http\Livewire\HomeComponent;
-use App\Http\Livewire\VendingComponent;
-use App\Http\Livewire\VendingListComponent;
-use App\Http\Livewire\ProductComponent;
-use App\Http\Livewire\ProductListComponent;
-use App\Http\Livewire\ReportComponent;
+use App\Http\Livewire\User\VendingComponent;
+use App\Http\Livewire\User\VendingListComponent;
+use App\Http\Livewire\User\ProductComponent;
+use App\Http\Livewire\User\ProductListComponent;
+use App\Http\Livewire\User\ReportComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -39,15 +39,15 @@ Route::get('/', [HomeController::class, 'checkUserType']);
 
 // Route::get('/', IndexComponent::class);
 
-Route::get('/vending',VendingComponent::class);
+Route::get('/user/vending',VendingComponent::class);
 
-Route::get('/vendingList',VendingListComponent::class);
+Route::get('/user/vendingList',VendingListComponent::class);
 
-Route::get('/product',ProductComponent::class);
+Route::get('/user/product',ProductComponent::class);
 
-Route::get('/productList',ProductListComponent::class);
+Route::get('/user/productList',ProductListComponent::class);
 
-Route::get('/report',ReportComponent::class);
+Route::get('/user/report',ReportComponent::class);
 
 // Route::middleware([
 //     'auth:sanctum',

@@ -91,8 +91,8 @@
             </a>
             <div class="collapse" id="vend">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/vending"> New Vending </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/vendingList"> List of Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/vending"> New Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/vendingList"> List of Vending </a></li>
               </ul>
             </div>
           </li>
@@ -106,13 +106,13 @@
             </a>
             <div class="collapse" id="prod">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/product"> New Product </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/productList"> List of Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/product"> New Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/productList"> List of Product </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/report">
+            <a class="nav-link" href="/user/report">
               <span class="menu-icon">
                 <i class="mdi mdi-content-paste"></i>
               </span>
