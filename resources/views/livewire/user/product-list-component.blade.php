@@ -3,7 +3,9 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ url('user/product') }}" class="btn btn-primary float-end">ADD</a>
+                    <div class="badge badge-outline-primary float-end">
+                        <a href="{{ url('user/product') }}">Add</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Product Details</h4>
