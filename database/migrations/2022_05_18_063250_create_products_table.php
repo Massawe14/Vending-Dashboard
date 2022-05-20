@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_id');
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->decimal('price');
             $table->string('description')->nullable();
             $table->string('vending_id', 5, 2);
