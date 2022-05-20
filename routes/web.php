@@ -61,7 +61,7 @@ Route::get('/user/report', ReportComponent::class);
 // });
 
 Route::get('create', [ProductsController::class, 'create']);
-Route::post('insert-data',  [ProductsController::class, 'store']);
+Route::post('user/product',  [ProductsController::class, 'store']);
 
 // For User or Customer
 Route::middleware([

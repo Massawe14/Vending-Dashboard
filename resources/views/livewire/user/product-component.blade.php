@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
+                <div class="card-header">
+                <a href="{{ url('user/dashboard') }}" class="btn btn-danger float-end">BACK</a>
+                </div>
                 <div class="card-body">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger" role="alert">
@@ -25,7 +28,7 @@
                     @endif
                     <h4 class="card-title">Products</h4>
                     <p class="card-description"> Add new product to the system </p>
-                    <form class="forms-sample" method="POST" action="{{url('insert-data')}}">
+                    <form class="forms-sample" method="POST" action="{{ url('user/product') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="productID">Product ID</label>
@@ -34,6 +37,10 @@
                         <div class="form-group">
                             <label for="productName">Product Name</label>
                             <input type="text" name="name" class="form-control" id="productName" placeholder="Product Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">Product Image</label>
+                            <input type="file" name="image" class="form-control" id="productImage" placeholder="Product Image">
                         </div>
                         <div class="form-group">
                             <label for="productPrice">Product Price</label>
