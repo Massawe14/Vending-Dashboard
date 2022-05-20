@@ -3,7 +3,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-header">
-                <a href="{{ url('user/dashboard') }}" class="btn btn-danger float-end">BACK</a>
+                    <a href="{{ url('user/dashboard') }}" class="btn btn-danger float-end">BACK</a>
                 </div>
                 <div class="card-body">
                     @if (count($errors) > 0)
