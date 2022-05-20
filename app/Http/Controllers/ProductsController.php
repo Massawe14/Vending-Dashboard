@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         $product = Product::all()->toArray();
-        return view('livewire.user.product-list-component', compact('product'))->layout('layouts.base');
+        return view('livewire.user.product-list-component', compact('product'));
     }
 
     /**
