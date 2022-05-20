@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
-                <div class="card-header">
+                <h6 class="card-header"> Products
                     <a href="{{ url('user/productList') }}" class="btn btn-danger float-end">BACK</a>
-                </div>
+                </h6>
                 <div class="card-body">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger" role="alert">
@@ -17,17 +17,15 @@
                     @endif
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
                             <p>{{ session('status') }}</p>
                         </div>
                     @elseif(session('failed'))
                         <div class="alert alert-danger" role="alert">
-                            {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
                             <p>{{ session('failed') }}</p>
                         </div>
                     @endif
-                    <h4 class="card-title">Products</h4>
-                    <p class="card-description"> Add new product to the system </p>
+                    {{-- <h4 class="card-title">Products</h4> --}}
+                    {{-- <p class="card-description"> Add new product to the system </p> --}}
                     <form class="forms-sample" method="POST" action="{{ url('user/product') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">

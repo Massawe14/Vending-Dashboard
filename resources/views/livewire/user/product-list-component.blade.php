@@ -25,8 +25,6 @@
                                     <th> Product Image </th>
                                     <th> Product Price </th>
                                     <th> Vending ID </th>
-                                    <th> Created At </th>
-                                    <th> Updated At </th>
                                     <th> Action </th>
                                 </tr>
                             </thead>
@@ -46,8 +44,6 @@
                                         <td> {{$row['image']}} </td>
                                         <td> {{$row['price']}} </td>
                                         <td> {{$row['vending_id']}} </td>
-                                        <td> {{$row['created_at']}} </td>
-                                        <td> {{$row['updated_at']}} </td>
                                         <td>
                                             <div class="badge badge-outline-success">Edit</div>
                                             <div class="badge badge-outline-danger">Delete</div>
