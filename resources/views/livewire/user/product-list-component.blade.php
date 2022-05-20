@@ -2,13 +2,12 @@
     <div class="row">
         <div class="col-12 grid-margin">
             <div class="card">
-                <div class="card-header">
+                <h6 class="card-header">Product Details
                     <div class="badge badge-outline-primary float-end">
                         <a href="{{ url('user/product') }}">Add</a>
                     </div>
-                </div>
+                </h6>
                 <div class="card-body">
-                    <h4 class="card-title">Product Details</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -28,8 +27,7 @@
                                     <th> Vending ID </th>
                                     <th> Created At </th>
                                     <th> Updated At </th>
-                                    <th> Edit</th>
-                                    <th> Delete</th>
+                                    <th> Action </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,8 +50,6 @@
                                         <td> {{$row['updated_at']}} </td>
                                         <td>
                                             <div class="badge badge-outline-success">Edit</div>
-                                        </td>
-                                        <td>
                                             <div class="badge badge-outline-danger">Delete</div>
                                         </td>
                                     </tr>
