@@ -40,6 +40,7 @@ class ProductsController extends Controller
             'product_id' => 'required',
             'name' => 'required',
             'price' => 'required',
+            'image' => 'required',
             'vending_id' => 'required'
         ]);
 
@@ -50,6 +51,7 @@ class ProductsController extends Controller
             $product->product_id = $data['product_id'];
             $product->name = $data['name'];
             $product->price = $data['price'];
+            $product->price = $data['iamge'];
             $product->vending_id = $data['vending_id'];
             $product->save();
             return redirect('/user/product')->with('status',"Insert successfully");

@@ -3,15 +3,24 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            {{ session('status') }}
+                            {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
+                            <p>{{ session('status') }}</p>
                         </div>
                     @elseif(session('failed'))
                         <div class="alert alert-danger" role="alert">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            {{ session('failed') }}
+                            {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
+                            <p>{{ session('failed') }}</p>
                         </div>
                     @endif
                     <h4 class="card-title">Products</h4>
