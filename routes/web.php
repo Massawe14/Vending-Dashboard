@@ -24,21 +24,7 @@ use App\Http\Livewire\User\ReportComponent;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [HomeController::class, 'checkUserType']);
-
-// Route::get('/admin/dashboard', function() {
-//     return view('admin-dashboard');
-// })->name('admin.dashboard');
-
-// Route::get('/user/dashboard', function() {
-//     return view('user-dashboard');
-// })->name('user.dashboard');
-
-// Route::get('/', IndexComponent::class);
 
 Route::get('/user/vending', VendingComponent::class);
 
@@ -50,18 +36,10 @@ Route::get('/user/productList', ProductListComponent::class);
 
 Route::get('/user/report', ReportComponent::class);
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
 Route::get('create', [ProductsController::class, 'create']);
 Route::post('user/product',  [ProductsController::class, 'store']);
+
+Route::get('livewire.user.product-list-component', [ProductsController::class, 'index']);
 
 // For User or Customer
 Route::middleware([

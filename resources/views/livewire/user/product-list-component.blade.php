@@ -20,116 +20,44 @@
                                             </label>
                                         </div>
                                     </th>
-                                    <th> Order No </th>
-                                    <th> Product Cost </th>
-                                    <th> Project </th>
-                                    <th> Payment Mode </th>
-                                    <th> Start Date </th>
+                                    <th> ID </th>
+                                    <th> Product ID </th>
+                                    <th> Product Name </th>
+                                    <th> Product Image </th>
+                                    <th> Product Price </th>
+                                    <th> Vending ID </th>
+                                    <th> Created At </th>
+                                    <th> Updated At </th>
                                     <th> Edit</th>
                                     <th> Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Dashboard </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Website </td>
-                                    <td> Cash on delivered </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> App design </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Development </td>
-                                    <td> Online Payment </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Website </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
+                                @foreach ($product as $row)
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-check-muted m-0">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td> {{$row['id']}} </td>
+                                        <td> {{$row['product_id']}} </td>
+                                        <td> {{$row['name']}} </td>
+                                        <td> {{$row['image']}} </td>
+                                        <td> {{$row['price']}} </td>
+                                        <td> {{$row['vending_id']}} </td>
+                                        <td> {{$row['created_at']}} </td>
+                                        <td> {{$row['updated_at']}} </td>
+                                        <td>
+                                            <div class="badge badge-outline-success">Edit</div>
+                                        </td>
+                                        <td>
+                                            <div class="badge badge-outline-danger">Delete</div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
