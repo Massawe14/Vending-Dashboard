@@ -3,9 +3,7 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <h6 class="card-header">Product Details
-                    <div class="badge badge-outline-primary float-end">
-                        <a href="{{ url('user/product') }}">Add</a>
-                    </div>
+                    <a href="{{ url('user/product') }}" class="btn btn-primary float-end">ADD</a>
                 </h6>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -45,8 +43,8 @@
                                         <td> {{$row['price']}} </td>
                                         <td> {{$row['vending_id']}} </td>
                                         <td>
-                                            <div class="badge badge-outline-success">Edit</div>
-                                            <div class="badge badge-outline-danger">Delete</div>
+                                            <a href="" class="btn btn-success">Edit</a>
+                                            <a href="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
