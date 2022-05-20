@@ -51,10 +51,18 @@ class ProductsController extends Controller
             $product->product_id = $data['product_id'];
             $product->name = $data['name'];
             $product->price = $data['price'];
-            $product->price = $data['iamge'];
             $product->vending_id = $data['vending_id'];
+
+            if ($request->hasfile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time().".".$extension;
+                $file->move('uploads/products/', $filename);
+                $product->image = $filename;
+            }
+
             $product->save();
-            return redirect('/user/product')->with('status',"Insert successfully");
+            return redirect('/user/product')->with('status',"Product added successfully");
         }
         catch(Exception $e){
             return redirect('/user/product')->with('failed',"operation failed");
