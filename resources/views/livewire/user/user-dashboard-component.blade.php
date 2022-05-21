@@ -15,7 +15,18 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Potential growth</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total vending</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$vending}}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,7 +45,18 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total products</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$prod}}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Income</h6>
+                    <h6 class="text-muted font-weight-normal">Daily Reports</h6>
                 </div>
             </div>
         </div>
@@ -72,7 +94,18 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Expense current</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total notifications</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">0</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
