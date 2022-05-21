@@ -1,14 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\VendingController;
+
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+
 use App\Http\Livewire\IndexComponent;
 use App\Http\Livewire\HomeComponent;
+
 use App\Http\Livewire\User\VendingComponent;
 use App\Http\Livewire\User\VendingListComponent;
+use App\Http\Livewire\User\EditVendingComponent;
 use App\Http\Livewire\User\ProductComponent;
 use App\Http\Livewire\User\ProductListComponent;
 use App\Http\Livewire\User\EditProductComponent;
@@ -31,6 +37,8 @@ Route::get('/user/vending', VendingComponent::class);
 
 Route::get('/user/vendingList', VendingListComponent::class);
 
+Route::get('/user/editVending', EditVendingComponent::class);
+
 Route::get('/user/product', ProductComponent::class);
 
 Route::get('/user/productList', ProductListComponent::class);
@@ -39,6 +47,7 @@ Route::get('/user/editProduct', EditProductComponent::class);
 
 Route::get('/user/report', ReportComponent::class);
 
+// For Products
 Route::get('create', [ProductsController::class, 'create']);
 Route::post('user/product',  [ProductsController::class, 'store']);
 
@@ -49,6 +58,18 @@ Route::get('user/editProduct/{id}', [ProductsController::class, 'edit']);
 Route::put('update-data/{id}', [ProductsController::class, 'update']);
 
 Route::get('user/deleteProduct/{id}', [ProductsController::class, 'destroy']);
+
+// For Vending
+Route::get('create', [VendingController::class, 'create']);
+Route::post('user/vending',  [VendingController::class, 'store']);
+
+Route::get('livewire.user.vending-list-component', [VendingController::class, 'index']);
+
+Route::get('user/editVending/{id}', [VendingController::class, 'edit']);
+
+Route::put('update-data/{id}', [VendingController::class, 'update']);
+
+Route::get('user/deleteVending/{id}', [VendingController::class, 'destroy']);
 
 // For User or Customer
 Route::middleware([
