@@ -45,7 +45,10 @@ Route::post('user/product',  [ProductsController::class, 'store']);
 Route::get('livewire.user.product-list-component', [ProductsController::class, 'index']);
 
 Route::get('user/editProduct/{id}', [ProductsController::class, 'edit']);
+
 Route::put('update-data/{id}', [ProductsController::class, 'update']);
+
+Route::get('user/deleteProduct/{id}', [ProductsController::class, 'destroy']);
 
 // For User or Customer
 Route::middleware([

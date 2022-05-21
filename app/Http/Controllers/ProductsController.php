@@ -65,7 +65,7 @@ class ProductsController extends Controller
             return redirect('/user/product')->with('status',"Product added successfully");
         }
         catch(Exception $e){
-            return redirect('/user/product')->with('failed',"operation failed");
+            return redirect('/user/productList')->with('failed',"Something went wrong");
         }
     }
 
@@ -122,7 +122,7 @@ class ProductsController extends Controller
             return redirect('/user/productList')->with('status',"Product updated successfully");
         }
         catch(Exception $e){
-            return redirect('/user/productList')->with('failed',"operation failed");
+            return redirect('/user/productList')->with('failed',"Something went wrong");
         }
     }
     /**
@@ -133,6 +133,13 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $product = Product::find($id);
+            $product->delete();
+            return redirect('/user/productList')->with('status',"Product deleted successfully");
+        }
+        catch(Exception $e){
+            return redirect('/user/productList')->with('failed',"Something went wrong");
+        }
     }
 }

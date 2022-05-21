@@ -7,8 +7,9 @@
                 </h6>
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <p>{{ session('status') }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                         </div>
                     @elseif(session('failed'))
                         <div class="alert alert-danger" role="alert">
@@ -39,7 +40,7 @@
                                         <td> {{$row->vending_id}} </td>
                                         <td>
                                             <a href="{{ url('user/editProduct/'.$row->id) }}" class="btn btn-success">Edit</a>
-                                            <a href="" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('user/deleteProduct/'.$row->id) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

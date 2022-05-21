@@ -7,7 +7,7 @@
                 </h6>
                 <div class="card-body">
                     @if (count($errors) > 0)
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{$error}}</li>
@@ -16,11 +16,11 @@
                         </div>
                     @endif
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <p>{{ session('status') }}</p>
                         </div>
                     @elseif(session('failed'))
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <p>{{ session('failed') }}</p>
                         </div>
                     @endif
