@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use Livewire\Component;
 use App\Models\Product;
 use App\Models\Vending;
+use App\Models\ProductsCategory;
 
 class UserDashboardComponent extends Component
 {
@@ -12,7 +13,8 @@ class UserDashboardComponent extends Component
         $product = Product::latest()->paginate(5);
         $prod =  Product::count();
         $vending = Vending::count();
-        return view('livewire.user.user-dashboard-component', compact('product','prod','vending'))->layout('layouts.base');
+        $category = ProductsCategory::count();
+        return view('livewire.user.user-dashboard-component', compact('product','prod','vending','category'))->layout('layouts.base');
     }
 }
 

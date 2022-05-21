@@ -54,7 +54,7 @@ class VendingController extends Controller
             return redirect('/user/vending')->with('status',"Vending added successfully");
         }
         catch(Exception $e){
-            return redirect('/user/vendingList')->with('failed',"Something went wrong");
+            return redirect('/user/vending')->with('failed',"Something went wrong");
         }
     }
 

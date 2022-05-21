@@ -48,6 +48,13 @@
                             <input type="text" name="price" class="form-control" id="productPrice" placeholder="Product Price">
                         </div>
                         <div class="form-group">
+                            <label for="vendingID">Product Category</label>
+                            <select name="category" class="form-control" style="width:100%">
+                                <option value="drinks">drinks</option>
+                                <option value="snacks">snacks</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="vendingID">Vending ID</label>
                             <select name="vending_id" class="form-control" style="width:100%">
                                 <option value="VD1">Vending 1</option>

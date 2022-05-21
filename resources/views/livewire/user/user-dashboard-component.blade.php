@@ -66,6 +66,36 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
+                                <h3 class="mb-0">Product Categories</h3>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="icon icon-box-success ">
+                                <span class="mdi mdi-clipboard-text icon-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total product category</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$category}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
                                 <h3 class="mb-0">Reports</h3>
                             </div>
                         </div>
@@ -76,36 +106,6 @@
                         </div>
                     </div>
                     <h6 class="text-muted font-weight-normal">Daily Reports</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">Notifications</h3>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-success ">
-                                <span class="mdi mdi mdi-bell icon-item"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h6 class="text-muted font-weight-normal">Total notifications</h6>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div>
-                                <h5 class="text-muted font-weight-normal">0</h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -137,6 +137,7 @@
                                     <th scope="col"> Product Name </th>
                                     <th scope="col"> Product Image </th>
                                     <th scope="col"> Product Price </th>
+                                    <th scope="col"> Product Category </th>
                                     <th scope="col"> Vending ID </th>
                                     <th scope="col"> Action </th>
                                 </tr>
@@ -149,6 +150,7 @@
                                         <td> {{$row->name}} </td>
                                         <td> <img src="{{ asset('uploads/products/'.$row->image) }}" alt="Image"> </td>
                                         <td> {{$row->price}} </td>
+                                        <td> {{$row->category}} </td>
                                         <td> {{$row->vending_id}} </td>
                                         <td>
                                             <a href="{{ url('user/editProduct/'.$row->id) }}" class="btn btn-success">Edit</a>

@@ -106,6 +106,7 @@
             </a>
             <div class="collapse" id="prod">
               <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/user/category"> Product category </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/user/product"> New Product </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/user/productList"> List of Product </a></li>
               </ul>

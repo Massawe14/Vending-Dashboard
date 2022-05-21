@@ -65,7 +65,7 @@ class ProductsController extends Controller
             return redirect('/user/product')->with('status',"Product added successfully");
         }
         catch(Exception $e){
-            return redirect('/user/productList')->with('failed',"Something went wrong");
+            return redirect('/user/product')->with('failed',"Something went wrong");
         }
     }
 

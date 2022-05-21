@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\VendingController;
+use App\Http\Controllers\CategoryController;
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
@@ -19,6 +20,7 @@ use App\Http\Livewire\User\ProductComponent;
 use App\Http\Livewire\User\ProductListComponent;
 use App\Http\Livewire\User\EditProductComponent;
 use App\Http\Livewire\User\ReportComponent;
+use App\Http\Livewire\User\ProductCategoryComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,8 @@ Route::get('/user/editProduct', EditProductComponent::class);
 
 Route::get('/user/report', ReportComponent::class);
 
+Route::get('/user/category', ProductCategoryComponent::class);
+
 // For Products
 Route::get('create', [ProductsController::class, 'create']);
 Route::post('user/product',  [ProductsController::class, 'store']);
@@ -70,6 +74,10 @@ Route::get('user/editVending/{id}', [VendingController::class, 'edit']);
 Route::put('update-vending/{id}', [VendingController::class, 'update']);
 
 Route::get('user/deleteVending/{id}', [VendingController::class, 'destroy']);
+
+// For Category
+Route::get('create', [CategoryController::class, 'create']);
+Route::post('user/category',  [CategoryController::class, 'store']);
 
 // For User or Customer
 Route::middleware([
