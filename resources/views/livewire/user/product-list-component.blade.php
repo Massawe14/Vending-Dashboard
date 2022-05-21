@@ -7,22 +7,22 @@
                 </h6>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered mb-5">
                             <thead>
-                                <tr>
-                                    <th> ID </th>
-                                    <th> Product ID </th>
-                                    <th> Product Name </th>
-                                    <th> Product Image </th>
-                                    <th> Product Price </th>
-                                    <th> Vending ID </th>
-                                    <th> Action </th>
+                                <tr class="table-success">
+                                    <th scope="col"> # </th>
+                                    <th scope="col"> Product ID </th>
+                                    <th scope="col"> Product Name </th>
+                                    <th scope="col"> Product Image </th>
+                                    <th scope="col"> Product Price </th>
+                                    <th scope="col"> Vending ID </th>
+                                    <th scope="col"> Action </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($product as $row)
                                     <tr>
-                                        <td> {{$row->id}} </td>
+                                        <td scope="row"> {{$row->id}} </td>
                                         <td> {{$row->product_id}} </td>
                                         <td> {{$row->name}} </td>
                                         <td> {{$row->image}} </td>
@@ -36,10 +36,10 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                            {{ $product->links() }}
+                        </div>
                     </div>
-                </div>
-                <div class="d-flex">
-                    {{ $product->links() }}
                 </div>
             </div>
         </div>
