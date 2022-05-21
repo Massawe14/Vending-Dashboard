@@ -236,10 +236,12 @@
                                 @if (session('status'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <p>{{ session('status') }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                                     </div>
                                 @elseif(session('failed'))
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                         <p>{{ session('failed') }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                                     </div>
                                 @endif
                                 <form class="forms-sample" method="POST" action="{{ url('update-data/'.$product->id) }}" enctype="multipart/form-data">

@@ -14,6 +14,7 @@
                     @elseif(session('failed'))
                         <div class="alert alert-danger" role="alert">
                             <p>{{ session('failed') }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                         </div>
                     @endif
                     <div class="table-responsive">
