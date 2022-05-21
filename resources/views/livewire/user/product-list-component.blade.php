@@ -7,16 +7,9 @@
                 </h6>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </th>
                                     <th> ID </th>
                                     <th> Product ID </th>
                                     <th> Product Name </th>
@@ -29,21 +22,14 @@
                             <tbody>
                                 @foreach ($product as $row)
                                     <tr>
+                                        <td> {{$row->id}} </td>
+                                        <td> {{$row->product_id}} </td>
+                                        <td> {{$row->name}} </td>
+                                        <td> {{$row->image}} </td>
+                                        <td> {{$row->price}} </td>
+                                        <td> {{$row->vending_id}} </td>
                                         <td>
-                                            <div class="form-check form-check-muted m-0">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td> {{$row['id']}} </td>
-                                        <td> {{$row['product_id']}} </td>
-                                        <td> {{$row['name']}} </td>
-                                        <td> {{$row['image']}} </td>
-                                        <td> {{$row['price']}} </td>
-                                        <td> {{$row['vending_id']}} </td>
-                                        <td>
-                                            <a href="" class="btn btn-success">Edit</a>
+                                            <a href="{{ url('user/editProduct/'.$row->id) }}" class="btn btn-success">Edit</a>
                                             <a href="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
@@ -51,6 +37,9 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="d-flex">
+                    {{ $product->links() }}
                 </div>
             </div>
         </div>

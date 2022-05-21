@@ -14,7 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $product = Product::all()->toArray();
+        $product = Product::latest()->paginate(5);
         return view('livewire.user.product-list-component', compact('product'));
     }
 
@@ -25,7 +25,6 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $urlData = getURLList();
         return view('livewire.user.product-component');
     }
 
@@ -89,7 +88,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('livewire.user.edit-product-component', compact('product'))->layout('layouts.base');
     }
 
     /**
