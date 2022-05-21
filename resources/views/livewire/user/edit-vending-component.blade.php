@@ -244,7 +244,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                                     </div>
                                 @endif
-                                <form class="forms-sample" method="POST" action="{{ url('update-data/'.$vending->id) }}">
+                                <form class="forms-sample" method="POST" action="{{ url('update-vending/'.$vending->id) }}">
                                     {{ csrf_field() }}
                                     @method('PUT')
                                     <div class="form-group">

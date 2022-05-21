@@ -67,7 +67,7 @@ Route::get('livewire.user.vending-list-component', [VendingController::class, 'i
 
 Route::get('user/editVending/{id}', [VendingController::class, 'edit']);
 
-Route::put('update-data/{id}', [VendingController::class, 'update']);
+Route::put('update-vending/{id}', [VendingController::class, 'update']);
 
 Route::get('user/deleteVending/{id}', [VendingController::class, 'destroy']);
 
