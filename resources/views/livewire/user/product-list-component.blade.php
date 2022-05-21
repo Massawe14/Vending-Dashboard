@@ -6,6 +6,15 @@
                     <a href="{{ url('user/product') }}" class="btn btn-primary float-end">ADD</a>
                 </h6>
                 <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            <p>{{ session('status') }}</p>
+                        </div>
+                    @elseif(session('failed'))
+                        <div class="alert alert-danger" role="alert">
+                            <p>{{ session('failed') }}</p>
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered mb-5">
                             <thead>

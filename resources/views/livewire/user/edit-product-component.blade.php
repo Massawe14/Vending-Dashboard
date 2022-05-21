@@ -233,15 +233,6 @@
                                 <a href="{{ url('user/productList') }}" class="btn btn-danger float-end">BACK</a>
                             </h6>
                             <div class="card-body">
-                                @if (count($errors) > 0)
-                                    <div class="alert alert-danger" role="alert">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{$error}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
                                 @if (session('status'))
                                     <div class="alert alert-success" role="alert">
                                         <p>{{ session('status') }}</p>
@@ -251,9 +242,7 @@
                                         <p>{{ session('failed') }}</p>
                                     </div>
                                 @endif
-                                {{-- <h4 class="card-title">Products</h4> --}}
-                                {{-- <p class="card-description"> Add new product to the system </p> --}}
-                                <form class="forms-sample" method="POST" action="{{ url('update-data/'.$product->product_id) }}" enctype="multipart/form-data">
+                                <form class="forms-sample" method="POST" action="{{ url('update-data/'.$product->id) }}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     @method('PUT')
                                     <div class="form-group">

@@ -101,9 +101,30 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $data = $request->input();
 
+        try {
+            $product = Product::find($id);
+            $product->product_id = $data['product_id'];
+            $product->name = $data['name'];
+            $product->price = $data['price'];
+            $product->vending_id = $data['vending_id'];
+
+            if ($request->hasfile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time().".".$extension;
+                $file->move('uploads/products/', $filename);
+                $product->image = $filename;
+            }
+
+            $product->update();
+            return redirect('/user/productList')->with('status',"Product updated successfully");
+        }
+        catch(Exception $e){
+            return redirect('/user/productList')->with('failed',"operation failed");
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
