@@ -4,13 +4,15 @@ namespace App\Http\Livewire\User;
 
 use Livewire\Component;
 use App\Models\ProductsCategory;
+use App\Models\Vending;
 
 class ProductComponent extends Component
 {
     public function render()
     {
         $category = ProductsCategory::all();
-        return view('livewire.user.product-component', compact('category'))->layout('layouts.base');
+        $vending = Vending::all();
+        return view('livewire.user.product-component', compact('category','vending'))->layout('layouts.base');
     }
 
     /**
@@ -21,6 +23,7 @@ class ProductComponent extends Component
     public function create()
     {
         $category = ProductsCategory::all();
-        return view('livewire.user.product-component', compact('category'))->layout('layouts.base');
+        $vending = Vending::all();
+        return view('livewire.user.product-component', compact('category','vending'))->layout('layouts.base');
     }
 }

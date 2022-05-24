@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductsCategory;
+use App\Models\Vending;
 
 class ProductsController extends Controller
 {
@@ -17,7 +18,8 @@ class ProductsController extends Controller
     {
         $product = Product::latest()->paginate(5);
         $category = ProductsCategory::all();
-        return view('livewire.user.product-list-component', compact('product','category'));
+        $vending = Vending::all();
+        return view('livewire.user.product-list-component', compact('product','category','vending'));
     }
 
     /**
@@ -28,7 +30,8 @@ class ProductsController extends Controller
     public function create()
     {
         $category = ProductsCategory::all();
-        return view('livewire.user.product-component', compact('category'));
+        $vending = Vending::all();
+        return view('livewire.user.product-component', compact('category','vending'));
     }
 
     /**

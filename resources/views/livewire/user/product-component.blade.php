@@ -58,11 +58,9 @@
                         <div class="form-group">
                             <label for="vendingID">Vending ID</label>
                             <select name="vending_id" class="form-control" style="width:100%">
-                                <option value="VD1">Vending 1</option>
-                                <option value="VD2">Vending 2</option>
-                                <option value="VD3">Vending 3</option>
-                                <option value="VD4">Vending 4</option>
-                                <option value="VD5">Vending 5</option>
+                                @foreach ($vending as $data)
+                                    <option value="{{$data->vending_id}}">{{$data->vending_id}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
