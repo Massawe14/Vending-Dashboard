@@ -256,22 +256,28 @@
                                         <input type="text" name="name" value="{{$product->name}}" class="form-control" id="productName" placeholder="Product Name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="productImage">Product Image</label>
-                                        <input type="file" name="image" value="{{$product->image}}" class="form-control" id="productImage" placeholder="Product Image">
+                                      <label for="productImage">Product Image</label>
+                                      <input type="file" name="image" value="{{$product->image}}" class="form-control" id="productImage" placeholder="Product Image">
                                     </div>
                                     <div class="form-group">
-                                        <label for="productPrice">Product Price</label>
-                                        <input type="text" name="price" value="{{$product->price}}" class="form-control" id="productPrice" placeholder="Product Price">
+                                      <label for="productPrice">Product Price</label>
+                                      <input type="text" name="price" value="{{$product->price}}" class="form-control" id="productPrice" placeholder="Product Price">
                                     </div>
                                     <div class="form-group">
-                                        <label for="vendingID">Vending ID</label>
-                                        <select name="vending_id" value="{{$product->vending_id}}" class="form-control" style="width:100%">
-                                            <option value="{{$product->vending_id}}">{{$product->vending_id}}</option>
-                                            <option value="{{$product->vending_id}}">{{$product->vending_id}}</option>
-                                            <option value="{{$product->vending_id}}">{{$product->vending_id}}</option>
-                                            <option value="{{$product->vending_id}}">{{$product->vending_id}}</option>
-                                            <option value="{{$product->vending_id}}">{{$product->vending_id}}</option>
-                                        </select>
+                                      <label for="category">Product Category</label>
+                                      <select name="category" class="form-control" style="width:100%">
+                                        @foreach ($category as $data)
+                                          <option value="{{$data->category}}">{{$data->category}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="vendingID">Vending ID</label>
+                                      <select name="vending_id" class="form-control" style="width:100%">
+                                        @foreach ($vending as $data)
+                                          <option value="{{$data->vending_id}}">{{$data->vending_id}}</option>
+                                        @endforeach
+                                      </select>
                                     </div>
                                     <button type="submit" class="btn btn-primary me-2">Update</button>
                                     <a class="btn btn-dark" href="{{ url('user/productList') }}">Cancel</a>

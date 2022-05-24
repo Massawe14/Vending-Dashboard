@@ -97,7 +97,9 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('livewire.user.edit-product-component', compact('product'))->layout('layouts.base');
+        $category = ProductsCategory::all();
+        $vending = Vending::all();
+        return view('livewire.user.edit-product-component', compact('product','category','vending'))->layout('layouts.base');
     }
 
     /**
