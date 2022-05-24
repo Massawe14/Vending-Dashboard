@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = ProductsCategory::all();
+        return view('livewire.user.product-component', compact('category'));
     }
 
     /**

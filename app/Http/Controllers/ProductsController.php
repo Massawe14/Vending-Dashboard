@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductsCategory;
 
 class ProductsController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductsController extends Controller
     public function index()
     {
         $product = Product::latest()->paginate(5);
-        return view('livewire.user.product-list-component', compact('product'));
+        $category = ProductsCategory::all();
+        return view('livewire.user.product-list-component', compact('product','category'));
     }
 
     /**
@@ -25,7 +27,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('livewire.user.product-component');
+        $category = ProductsCategory::all();
+        return view('livewire.user.product-component', compact('category'));
     }
 
     /**
@@ -41,7 +44,8 @@ class ProductsController extends Controller
             'name' => 'required',
             'price' => 'required',
             'image' => 'required',
-            'vending_id' => 'required'
+            'vending_id' => 'required',
+            'category' => 'required'
         ]);
 
         $data = $request->input();
@@ -52,6 +56,7 @@ class ProductsController extends Controller
             $product->name = $data['name'];
             $product->price = $data['price'];
             $product->vending_id = $data['vending_id'];
+            $product->category = $data['category'];
 
             if ($request->hasfile('image')) {
                 $file = $request->file('image');
@@ -109,6 +114,7 @@ class ProductsController extends Controller
             $product->name = $data['name'];
             $product->price = $data['price'];
             $product->vending_id = $data['vending_id'];
+            $product->category = $data['category'];
 
             if ($request->hasfile('image')) {
                 $file = $request->file('image');

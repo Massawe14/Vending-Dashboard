@@ -49,7 +49,7 @@ Route::get('/user/editProduct', EditProductComponent::class);
 
 Route::get('/user/report', ReportComponent::class);
 
-Route::get('/user/category', ProductCategoryComponent::class);
+Route::get('/user/category', ProductCategoryComponent::class);  
 
 // For Products
 Route::get('create', [ProductsController::class, 'create']);

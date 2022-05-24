@@ -31,7 +31,8 @@ class ProductController extends Controller
             'product_id' => 'required',
             'name' => 'required',
             'price' => 'required',
-            'vending_id' => 'required'
+            'vending_id' => 'required',
+            'category' => 'required'
         ]);
 
         return Product::create($request->all());

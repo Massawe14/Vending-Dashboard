@@ -48,10 +48,11 @@
                             <input type="text" name="price" class="form-control" id="productPrice" placeholder="Product Price">
                         </div>
                         <div class="form-group">
-                            <label for="vendingID">Product Category</label>
+                            <label for="category">Product Category</label>
                             <select name="category" class="form-control" style="width:100%">
-                                <option value="drinks">drinks</option>
-                                <option value="snacks">snacks</option>
+                                @foreach ($category as $data)
+                                    <option value="{{$data->category}}">{{$data->category}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
