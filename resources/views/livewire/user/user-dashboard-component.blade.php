@@ -114,7 +114,7 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <h6 class="card-header">Product Details
-                    <a href="{{ url('user/product') }}" class="btn btn-primary float-end">ADD</a>
+                    <a href="{{ url('user/product') }}" class="btn btn-primary float-end">Add</a>
                 </h6>
                 <div class="card-body">
                     @if (session('status'))
