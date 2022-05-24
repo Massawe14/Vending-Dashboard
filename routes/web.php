@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\VendingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChangePasswordController;
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
@@ -21,6 +22,7 @@ use App\Http\Livewire\User\ProductListComponent;
 use App\Http\Livewire\User\EditProductComponent;
 use App\Http\Livewire\User\ReportComponent;
 use App\Http\Livewire\User\ProductCategoryComponent;
+use App\Http\Livewire\User\ChangePasswordComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +51,9 @@ Route::get('/user/editProduct', EditProductComponent::class);
 
 Route::get('/user/report', ReportComponent::class);
 
-Route::get('/user/category', ProductCategoryComponent::class);  
+Route::get('/user/category', ProductCategoryComponent::class); 
+
+Route::get('/user/change-password', ChangePasswordComponent::class);
 
 // For Products
 Route::get('create', [ProductsController::class, 'create']);
@@ -78,6 +82,10 @@ Route::get('user/deleteVending/{id}', [VendingController::class, 'destroy']);
 // For Category
 Route::get('create', [CategoryController::class, 'create']);
 Route::post('user/category',  [CategoryController::class, 'store']);
+
+// For Change Password
+Route::get('create', [ChangePasswordController::class, 'create']);
+Route::post('user/update-password', [ChangePasswordController::class, 'updatePassword']);
 
 // For User or Customer
 Route::middleware([

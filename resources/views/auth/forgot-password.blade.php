@@ -40,7 +40,7 @@
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3">Forgot Password</h3>
+                <h3 class="card-title text-left mb-3">Reset Password</h3>
                 @if (session('status'))
                     <div class="alert alert-success alert-dismissible fade show">
                         <p>{{ session('status') }}</p>
@@ -66,7 +66,9 @@
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary btn-block enter-btn" name="submit">Email Password Reset Link</button>
                   </div>
-                  <p class="sign-up"><a href="{{ route('login') }}"> BACK </a></p>
+                  <div class="text-center">
+                    <a class="btn btn-primary" href="{{ route('login') }}">Back</a>
+                  </div>
                 </form>
               </div>
             </div>
