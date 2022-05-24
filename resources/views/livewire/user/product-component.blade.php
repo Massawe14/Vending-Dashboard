@@ -27,8 +27,6 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                         </div>
                     @endif
-                    {{-- <h4 class="card-title">Products</h4> --}}
-                    {{-- <p class="card-description"> Add new product to the system </p> --}}
                     <form class="forms-sample" method="POST" action="{{ url('user/product') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">

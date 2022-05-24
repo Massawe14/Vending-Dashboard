@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -31,4 +31,48 @@
             </div>
         </form>
     </x-jet-authentication-card>
+</x-guest-layout> --}}
+
+<x-guest-layout>
+   <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+          <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+            <div class="card col-lg-4 mx-auto">
+              <div class="card-body px-5 py-5">
+                <h3 class="card-title text-left mb-3">Forgot Password</h3>
+                @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show">
+                        <p>{{ session('status') }}</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                    </div>
+                @endif
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                    </div>
+                @endif
+                <form method="POST" action="{{ route('password.email') }}">
+                  @csrf
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control p_input" id="email" name="email" placeholder="Enter your email address" :value="old('email')" required autofocus>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block enter-btn" name="submit">Email Password Reset Link</button>
+                  </div>
+                  <p class="sign-up"><a href="{{ route('login') }}"> BACK </a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </x-guest-layout>
+
