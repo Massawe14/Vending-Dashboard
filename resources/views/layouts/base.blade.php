@@ -113,12 +113,23 @@
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/user/report">
+            <a class="nav-link" data-bs-toggle="collapse" href="#repo" aria-expanded="false" aria-controls="repo">
               <span class="menu-icon">
                 <i class="mdi mdi-content-paste"></i>
               </span>
               <span class="menu-title">Reports</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="repo">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Stock Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Tax Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Profit/Loss Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Trending Products </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Product Sell Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Sell Payment Report </a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>

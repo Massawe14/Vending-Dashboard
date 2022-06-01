@@ -65,8 +65,15 @@ class ProductsController extends Controller
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time().".".$extension;
-                $file->move('uploads/products/', $filename);
+                $file->storeAs('public/uploads/products/', $filename);
                 $product->image = $filename;
+
+                // $destination_path = 'public/uploads/products';
+                // $file = $request->file('image');
+                // $image_name = $file->getClientOriginalName();
+                // $path = $request->file('image')->storeAs($destination_path,$image_name);
+
+                // $product->image = $image_name;
             }
 
             $product->save();
@@ -87,6 +94,10 @@ class ProductsController extends Controller
     {
         //
     }
+
+    // public function search($category) {
+    //     $product = Product::where('category', 'like', '%'.$category.'%');
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -125,8 +136,15 @@ class ProductsController extends Controller
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time().".".$extension;
-                $file->move('uploads/products/', $filename);
+                $file->storeAs('public/uploads/products/', $filename);
                 $product->image = $filename;
+
+                // $destination_path = 'public/uploads/products';
+                // $file = $request->file('image');
+                // $image_name = $file->getClientOriginalName();
+                // $path = $request->file('image')->storeAs($destination_path,$image_name);
+
+                // $product->image = $image_name;
             }
 
             $product->update();

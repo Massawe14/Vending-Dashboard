@@ -83,9 +83,9 @@ class ProductController extends Controller
      * @param  string  $name
      * @return \Illuminate\Http\Response
      */
-    public function search($name)
+    public function search($category)
     {
         // SEARCH
-        return Product::where('name', 'like', '%'.$name.'%')->get();
+        return Product::where('category', 'like', '%'.$category.'%')->get();
     }
 }
