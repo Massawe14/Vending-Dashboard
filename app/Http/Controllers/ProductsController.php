@@ -63,10 +63,10 @@ class ProductsController extends Controller
 
             if ($request->hasfile('image')) {
                 $file = $request->file('image');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time().".".$extension;
-                $file->storeAs('public/uploads/products/', $filename);
-                $product->image = $filename;
+                $image_name = $file->getClientOriginalName();
+                $filename = time().".".$image_name;
+                $path = $file->store('uploads/products', 'public');
+                $product->image = $path;
 
                 // $destination_path = 'public/uploads/products';
                 // $file = $request->file('image');
@@ -134,10 +134,10 @@ class ProductsController extends Controller
 
             if ($request->hasfile('image')) {
                 $file = $request->file('image');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time().".".$extension;
-                $file->storeAs('public/uploads/products/', $filename);
-                $product->image = $filename;
+                $image_name = $file->getClientOriginalName();
+                $filename = time().".".$image_name;
+                $path = $file->store('uploads/products', 'public');
+                $product->image = $path;
 
                 // $destination_path = 'public/uploads/products';
                 // $file = $request->file('image');
