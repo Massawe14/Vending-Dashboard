@@ -148,7 +148,7 @@
                                         <td scope="row"> {{$row->id}} </td>
                                         <td> {{$row->product_id}} </td>
                                         <td> {{$row->name}} </td>
-                                        <td> <img src="{{ asset('uploads/products/'.$row->image) }}" alt="Image"> </td>
+                                        <td> <img src="{{ asset('/storage/uploads/products/'.$row->image) }}" alt="Image"> </td>
                                         <td> {{$row->price}} </td>
                                         <td> {{$row->category}} </td>
                                         <td> {{$row->vending_id}} </td>
