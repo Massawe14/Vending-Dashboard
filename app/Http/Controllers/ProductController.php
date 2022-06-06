@@ -31,6 +31,8 @@ class ProductController extends Controller
             'product_id' => 'required',
             'name' => 'required',
             'price' => 'required',
+            'quantity' => 'required',
+            'slot_number' => 'required',
             'vending_id' => 'required',
             'category' => 'required'
         ]);

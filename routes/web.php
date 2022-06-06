@@ -16,6 +16,7 @@ use App\Http\Livewire\HomeComponent;
 
 use App\Http\Livewire\User\VendingComponent;
 use App\Http\Livewire\User\VendingListComponent;
+use App\Http\Livewire\User\VendingProductComponent;
 use App\Http\Livewire\User\EditVendingComponent;
 use App\Http\Livewire\User\ProductComponent;
 use App\Http\Livewire\User\ProductListComponent;
@@ -40,6 +41,8 @@ Route::get('/', [HomeController::class, 'checkUserType']);
 Route::get('/user/vending', VendingComponent::class);
 
 Route::get('/user/vendingList', VendingListComponent::class);
+
+Route::get('/user/vendingView', VendingProductComponent::class);
 
 Route::get('/user/editVending', EditVendingComponent::class);
 
@@ -78,6 +81,8 @@ Route::get('user/editVending/{id}', [VendingController::class, 'edit']);
 Route::put('update-vending/{id}', [VendingController::class, 'update']);
 
 Route::get('user/deleteVending/{id}', [VendingController::class, 'destroy']);
+
+Route::get('user/viewVendingProduct/{vending_id}', [VendingController::class, 'show']);
 
 // For Category
 Route::get('create', [CategoryController::class, 'create']);

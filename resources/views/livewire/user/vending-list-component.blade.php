@@ -38,6 +38,7 @@
                                         <td>
                                             <a href="{{ url('user/editVending/'.$row->id) }}" class="btn btn-success">Edit</a>
                                             <a href="{{ url('user/deleteVending/'.$row->id) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('user/viewVendingProduct/'.$row->vending_id) }}" class="btn btn-warning">View</a>
                                         </td>
                                     </tr>
                                 @endforeach

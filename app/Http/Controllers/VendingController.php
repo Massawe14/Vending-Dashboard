@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vending;
+use App\Models\Product;
 
 class VendingController extends Controller
 {
@@ -14,8 +15,16 @@ class VendingController extends Controller
      */
     public function index()
     {
-        $vending = Vending::latest()->paginate(5);
-        return view('livewire.user.vending-list-component', compact('vending'));
+        $vendingId = request('vending_id');
+
+        if ($vendingId) {
+            $product = Product::find($vendingId)->paginate(10); 
+            return view('livewire.user.vending-product-component', compact('product'));
+        }
+        else {
+            $vending = Vending::latest()->paginate(10);
+            return view('livewire.user.vending-list-component', compact('vending'));
+        }
     }
 
     /**
@@ -64,9 +73,10 @@ class VendingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($vending_id)
     {
-        //
+        $product = Product::where('vending_id','=', $vending_id)->paginate(5);
+        return view('livewire.user.vending-product-component', compact('product'))->layout('layouts.base');
     }
 
     /**

@@ -58,6 +58,8 @@ class ProductsController extends Controller
             $product->product_id = $data['product_id'];
             $product->name = $data['name'];
             $product->price = $data['price'];
+            $product->quantity = $data['quantity'];
+            $product->slot_number = $data['slot_number'];
             $product->vending_id = $data['vending_id'];
             $product->category = $data['category'];
 
@@ -90,9 +92,10 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($vending_id)
     {
-        //
+        $product = Product::find($vending_id);
+        return view('livewire.user.vending-product-component', compact('product'))->layout('layouts.base');
     }
 
     // public function search($category) {
@@ -129,6 +132,8 @@ class ProductsController extends Controller
             $product->product_id = $data['product_id'];
             $product->name = $data['name'];
             $product->price = $data['price'];
+            $product->quantity = $data['quantity'];
+            $product->slot_number = $data['slot_number'];
             $product->vending_id = $data['vending_id'];
             $product->category = $data['category'];
 

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->decimal('price', 5, 2);
+            $table->integer('quantity');
+            $table->integer('slot_number');
             $table->string('category');
             $table->string('vending_id');
             $table->timestamps();

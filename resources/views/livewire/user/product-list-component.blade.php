@@ -26,6 +26,8 @@
                                     <th scope="col"> Product Name </th>
                                     <th scope="col"> Product Image </th>
                                     <th scope="col"> Product Price </th>
+                                    <th scope="col"> Quantity </th>
+                                    <th scope="col"> Slot Number </th>
                                     <th scope="col"> Product Category </th>
                                     <th scope="col"> Vending ID </th>
                                     <th scope="col"> Action </th>
@@ -39,6 +41,8 @@
                                         <td> {{$row->name}} </td>
                                         <td> <img src="{{ asset('/storage/'.$row->image) }}" width="100px;" height="100px;" alt="Image"> </td>
                                         <td> {{$row->price}} </td>
+                                        <td> {{$row->quantity}} </td>
+                                        <td> {{$row->slot_number}} </td>
                                         <td> {{$row->category}} </td>
                                         <td> {{$row->vending_id}} </td>
                                         <td>

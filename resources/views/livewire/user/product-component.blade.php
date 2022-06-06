@@ -46,6 +46,14 @@
                             <input type="text" name="price" class="form-control" id="productPrice" placeholder="Product Price">
                         </div>
                         <div class="form-group">
+                            <label for="productQuantity">Product Quantity</label>
+                            <input type="number" name="quantity" class="form-control" id="productQuantity" placeholder="Product Quantity">
+                        </div>
+                        <div class="form-group">
+                            <label for="productSlotNumber">Slot Number</label>
+                            <input type="number" name="slot_number" class="form-control" id="productSlotNumber" placeholder="Slot Number">
+                        </div>
+                        <div class="form-group">
                             <label for="category">Product Category</label>
                             <select name="category" class="form-control" style="width:100%">
                                 @foreach ($category as $data)
