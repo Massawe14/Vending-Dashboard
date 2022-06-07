@@ -69,13 +69,6 @@ class ProductsController extends Controller
                 $filename = time().".".$image_name;
                 $path = $file->store('uploads/products', 'public');
                 $product->image = $path;
-
-                // $destination_path = 'public/uploads/products';
-                // $file = $request->file('image');
-                // $image_name = $file->getClientOriginalName();
-                // $path = $request->file('image')->storeAs($destination_path,$image_name);
-
-                // $product->image = $image_name;
             }
 
             $product->save();
@@ -97,10 +90,6 @@ class ProductsController extends Controller
         $product = Product::find($vending_id);
         return view('livewire.user.vending-product-component', compact('product'))->layout('layouts.base');
     }
-
-    // public function search($category) {
-    //     $product = Product::where('category', 'like', '%'.$category.'%');
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -143,13 +132,6 @@ class ProductsController extends Controller
                 $filename = time().".".$image_name;
                 $path = $file->store('uploads/products', 'public');
                 $product->image = $path;
-
-                // $destination_path = 'public/uploads/products';
-                // $file = $request->file('image');
-                // $image_name = $file->getClientOriginalName();
-                // $path = $request->file('image')->storeAs($destination_path,$image_name);
-
-                // $product->image = $image_name;
             }
 
             $product->update();

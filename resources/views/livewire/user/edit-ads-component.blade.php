@@ -57,7 +57,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="/user/change-password" class="dropdown-item preview-item">
+                <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-onepassword  text-info"></i>
@@ -91,8 +91,8 @@
             </a>
             <div class="collapse" id="ads">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/user/ads"> New Ads </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/user/adsList"> List of Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> New Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> List of Ads </a></li>
               </ul>
             </div>
           </li>
@@ -121,30 +121,18 @@
             </a>
             <div class="collapse" id="prod">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/user/category"> Product category </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/user/product"> New Product </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/user/productList"> List of Product </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#repo" aria-expanded="false" aria-controls="repo">
+            <a class="nav-link" href="/user/report">
               <span class="menu-icon">
                 <i class="mdi mdi-content-paste"></i>
               </span>
               <span class="menu-title">Reports</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="repo">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> Stock Report </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Tax Report </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Profit/Loss Report </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Trending Products </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Product Sell Report </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Sell Payment Report </a></li>
-              </ul>
-            </div>
           </li>
         </ul>
       </nav>
@@ -252,43 +240,88 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          {{$slot}}
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © imperialinnovations.co.tz 2022</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://imperialinnovations.co.tz/projects/vending-machine.html" target="_blank">Vending machine</a> from imperialinnovations.co.tz</span>
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <h6 class="card-header"> Edit Vending Ads
+                                <a href="{{ url('user/adsList') }}" class="btn btn-danger float-end">Back</a>
+                            </h6>
+                            <div class="card-body">
+                                @if (session('status'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <p>{{ session('status') }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                                    </div>
+                                @elseif(session('failed'))
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <p>{{ session('failed') }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                                    </div>
+                                @endif
+                                <form class="forms-sample" method="POST" action="{{ url('update-data/'.$ads->id) }}" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    @method('PUT')
+                                    <div class="form-group">
+                                        <label for="adsName">Ads Name</label>
+                                        <input type="text" name="ads_name" value="{{$ads->ads_name}}" class="form-control" id="adsName" placeholder="Ads Name">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="adsImage">Ads Image</label>
+                                      <input type="file" name="image" value="{{$ads->image}}" class="form-control" id="adsImage" placeholder="Ads Image">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="vendingID">Vending ID</label>
+                                      <select name="vending_id" class="form-control" style="width:100%">
+                                        @foreach ($vending as $data)
+                                          <option value="{{$data->vending_id}}">{{$data->vending_id}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary me-2">Update</button>
+                                    <a class="btn btn-dark" href="{{ url('user/adsList') }}">Cancel</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </footer>
-          <!-- partial -->
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © imperialinnovations.co.tz 2022</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://imperialinnovations.co.tz/projects/vending-machine.html" target="_blank">Vending machine</a> from imperialinnovations.co.tz</span>
+                </div>
+            </footer>
+            <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
         </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/progressbar.js/progressbar.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jvectormap/jquery-jvectormap.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="a{{ asset('ssets/vendors/owl-carousel-2/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.cookie.js" type="text/javascript') }}"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('assets/js/misc.js') }}"></script>
-    <script src="{{ asset('assets/js/settings.js') }}"></script>
-    <script src="{{ asset('assets/js/todolist.js') }}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-    <!-- End custom js for this page -->
-    @livewireScripts
+        <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/progressbar.js/progressbar.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/jvectormap/jquery-jvectormap.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+        <script src="a{{ asset('ssets/vendors/owl-carousel-2/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.cookie.js" type="text/javascript') }}"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('assets/js/misc.js') }}"></script>
+        <script src="{{ asset('assets/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/js/todolist.js') }}"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <!-- End custom js for this page -->
+        @livewireScripts
   </body>
 </html>
