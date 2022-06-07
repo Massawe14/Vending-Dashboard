@@ -82,6 +82,21 @@
             </a>
           </li>
           <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ads" aria-expanded="false" aria-controls="ads">
+              <span class="menu-icon">
+                <i class="mdi mdi-shopping"></i>
+              </span>
+              <span class="menu-title">Vending Ads</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ads">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> New Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> List of Ads </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#vend" aria-expanded="false" aria-controls="vend">
               <span class="menu-icon">
                 <i class="mdi mdi-fridge"></i>
