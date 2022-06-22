@@ -28,8 +28,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="/"><img src="{{ asset('assets/images/logo.svg') }}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="/"><img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="{{ url('user/dashboard') }}"><img src="{{ asset('assets/images/logo.svg') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="{{ url('user/dashboard') }}"><img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -57,7 +57,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
+                <a href="{{ url(/user/change-password) }}" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-onepassword  text-info"></i>
@@ -74,7 +74,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="{{ url('user/dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -91,8 +91,8 @@
             </a>
             <div class="collapse" id="ads">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> New Ads </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> List of Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/user/ads') }}"> New Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/user/adsList') }}"> List of Ads </a></li>
               </ul>
             </div>
           </li>
@@ -106,8 +106,8 @@
             </a>
             <div class="collapse" id="vend">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/user/vending"> New Vending </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/user/vendingList"> List of Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/vending) }}"> New Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/vendingList) }}"> List of Vending </a></li>
               </ul>
             </div>
           </li>
@@ -121,18 +121,30 @@
             </a>
             <div class="collapse" id="prod">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/user/product"> New Product </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/user/productList"> List of Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/category) }}"> Product category </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/product) }}"> New Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/productList) }}"> List of Product </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/user/report">
+            <a class="nav-link" data-bs-toggle="collapse" href="#repo" aria-expanded="false" aria-controls="repo">
               <span class="menu-icon">
                 <i class="mdi mdi-content-paste"></i>
               </span>
               <span class="menu-title">Reports</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="repo">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Stock Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Tax Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Profit/Loss Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Trending Products </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Product Sell Report </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Sell Payment Report </a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>
@@ -156,7 +168,7 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="{{ url('user/dashboard') }}">
                   <i class="mdi mdi-view-grid"></i>
                 </a>
               </li>
