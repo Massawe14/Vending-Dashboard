@@ -15,11 +15,22 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Potential growth</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total vending</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$vending}}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        {{-- <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -34,10 +45,51 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total products</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$prod}}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h3 class="mb-0">Product Categories</h3>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="icon icon-box-success ">
+                                <span class="mdi mdi-clipboard-text icon-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total product category</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$category}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
         <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -53,158 +105,59 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Income</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">Notifications</h3>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="icon icon-box-success ">
-                                <span class="mdi mdi mdi-bell icon-item"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="text-muted font-weight-normal">Expense current</h6>
+                    <h6 class="text-muted font-weight-normal">Daily Reports</h6>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row ">
+    <div class="row">
         <div class="col-12 grid-margin">
             <div class="card">
+                <h6 class="card-header">Vending Details
+                    <a href="{{ url('user/vending') }}" class="btn btn-primary float-end">Add</a>
+                </h6>
                 <div class="card-body">
-                    <h4 class="card-title">Product Details</h4>
+                    @if (session('status'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p>{{ session('status') }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                        </div>
+                    @elseif(session('failed'))
+                        <div class="alert alert-danger" role="alert">
+                            <p>{{ session('failed') }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                        </div>
+                    @endif
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered mb-5">
                             <thead>
-                                <tr>
-                                    <th>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </th>
-                                    <th> Order No </th>
-                                    <th> Product Cost </th>
-                                    <th> Project </th>
-                                    <th> Payment Mode </th>
-                                    <th> Start Date </th>
-                                    <th> Edit</th>
-                                    <th> Delete</th>
+                                <tr class="table-success">
+                                    <th scope="col"> # </th>
+                                    <th scope="col"> Vending ID </th>
+                                    <th scope="col"> Vending Name </th>
+                                    <th scope="col"> Vending Location </th>
+                                    <th scope="col"> Action </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Dashboard </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Website </td>
-                                    <td> Cash on delivered </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> App design </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Development </td>
-                                    <td> Online Payment </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-muted m-0">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td> 02312 </td>
-                                    <td> $14,500 </td>
-                                    <td> Website </td>
-                                    <td> Credit card </td>
-                                    <td> 04 Dec 2019 </td>
-                                    <td>
-                                        <div class="badge badge-outline-success">Edit</div>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-outline-danger">Delete</div>
-                                    </td>
-                                </tr>
+                                @foreach ($vending as $row)
+                                    <tr>
+                                        <td scope="row"> {{$row->id}} </td>
+                                        <td> {{$row->vending_id}} </td>
+                                        <td> {{$row->name}} </td>
+                                        <td> {{$row->location}} </td>
+                                        <td>
+                                            <a href="{{ url('user/editVending/'.$row->id) }}" class="btn btn-success">Edit</a>
+                                            <a href="{{ url('user/deleteVending/'.$row->id) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('user/viewVendingProduct/'.$row->vending_id) }}" class="btn btn-warning">View</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                            {{ $vending->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

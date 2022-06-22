@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Product;
 use App\Models\Vending;
 use App\Models\ProductsCategory;
+use App\Models\Ads;
 
 class UserDashboardComponent extends Component
 {
@@ -14,7 +15,8 @@ class UserDashboardComponent extends Component
         $prod =  Product::count();
         $vending = Vending::count();
         $category = ProductsCategory::count();
-        return view('livewire.user.user-dashboard-component', compact('product','prod','vending','category'))->layout('layouts.base');
+        $ads = Ads::count();
+        return view('livewire.user.user-dashboard-component', compact('product','prod','vending','category','ads'))->layout('layouts.base');
     }
 }
 

@@ -91,8 +91,8 @@
             </a>
             <div class="collapse" id="ads">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/user/ads"> New Ads </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/user/adsList"> List of Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="user/ads"> New Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="user/adsList"> List of Ads </a></li>
               </ul>
             </div>
           </li>

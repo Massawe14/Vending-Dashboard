@@ -124,10 +124,14 @@ Route::middleware([
 });
 
 // For Admin
+// Route::prefix('admin')->middleware('auth')->group(function() {
+//     //
+// });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 });

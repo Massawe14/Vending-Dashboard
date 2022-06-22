@@ -96,16 +96,27 @@
                     <div class="row">
                         <div class="col-9">
                             <div class="d-flex align-items-center align-self-start">
-                                <h3 class="mb-0">Reports</h3>
+                                <h3 class="mb-0">Ads</h3>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="icon icon-box-primary">
-                                <span class="mdi mdi-content-paste icon-item"></span>
+                                <span class="mdi mdi-shopping icon-item"></span>
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Reports</h6>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="d-flex align-items-center align-self-start">
+                                <h6 class="text-muted font-weight-normal">Total Ads</h6>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div>
+                                <h5 class="text-muted font-weight-normal">{{$ads}}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

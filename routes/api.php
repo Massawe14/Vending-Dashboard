@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,20 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::resource('products', ProductController::class);
-
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::get('/products/search/{category}', [ProductController::class, 'search']);
+Route::get('/ads', [AdController::class, 'index']);
+Route::get('/ads/{id}', [AdController::class, 'show']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/products', [ProductController::class, 'store']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products{id}', [ProductController::class, 'destroy']);
+    Route::post('/ads', [AdController::class, 'store']);
+    Route::put('/ads/{id}', [AdController::class, 'update']);
+    Route::delete('/ads{id}', [AdController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']); 
 });
 
