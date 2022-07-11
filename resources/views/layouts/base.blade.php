@@ -57,7 +57,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ url(/user/change-password) }}" class="dropdown-item preview-item">
+                <a href="/user/change-password" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-onepassword  text-info"></i>
@@ -74,7 +74,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('user/dashboard') }}">
+            <a class="nav-link" href="/user/dashboard">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -91,8 +91,8 @@
             </a>
             <div class="collapse" id="ads">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url(user/ads) }}"> New Ads </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url(user/adsList) }}"> List of Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/ads"> New Ads </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/adsList"> List of Ads </a></li>
               </ul>
             </div>
           </li>
@@ -106,8 +106,8 @@
             </a>
             <div class="collapse" id="vend">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/vending) }}"> New Vending </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/vendingList) }}"> List of Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/vending"> New Vending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/vendingList"> List of Vending </a></li>
               </ul>
             </div>
           </li>
@@ -121,9 +121,9 @@
             </a>
             <div class="collapse" id="prod">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/category) }}"> Product category </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/product) }}"> New Product </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url(/user/productList) }}"> List of Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/category"> Product category </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/product"> New Product </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user/productList"> List of Product </a></li>
               </ul>
             </div>
           </li>
