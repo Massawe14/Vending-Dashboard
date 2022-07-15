@@ -19,9 +19,12 @@ class AuthAdmin
         if (session('role') === '1') {
             return $next($request);
         }
+        else if (session('role') === '0') {
+            return $next($request);
+        }
         else {
             session()->flush();
-            return redirect()->route('login'); 
+            return redirect()->with('message', 'Access Denied as you are not Admin')->route('login'); 
         }
         return $next($request);
     }
